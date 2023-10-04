@@ -1,0 +1,9 @@
+name: 'Wait'
+description: 'Wait a designated number of milliseconds'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+
+outputs:
+  result:
+    description: "ss"
