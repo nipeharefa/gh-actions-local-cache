@@ -8,8 +8,16 @@ jobs:
         run: echo "Hello World!"
       - name: Checkout the code
         uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
+      - run: |
+          apt update
+          apt install zstd -y -qq
+          npm install
       - name: Run
         uses: ./
+        with:
+          path: |
+            node_modules
+          key: "tst"
+          storage: /tmp
+      - run: |
+          ls -lah

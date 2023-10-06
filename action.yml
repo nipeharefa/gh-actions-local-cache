@@ -1,9 +1,21 @@
 name: 'Wait'
 description: 'Wait a designated number of milliseconds'
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: 'node16'
+  main: 'dist/main/index.js'
+  post: 'dist/restore/index.js'
+  post-if: success()
 
+inputs:
+  path:
+    description: 'A list of files, directories, and wildcard patterns to cache and restore'
+    required: true
+  key:
+    description: 'An explicit key for restoring and saving the cache'
+    required: true
+  storage:
+    description: 'Storage'
+    required: true
 outputs:
   result:
     description: "ss"
