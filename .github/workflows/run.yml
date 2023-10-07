@@ -2,6 +2,7 @@ name: hello-world
 on: push
 jobs:
   my-job:
+    if: ${{ github.event.act }}
     runs-on: ubuntu-latest
     steps:
       - name: my-step
@@ -9,6 +10,7 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v4
       - run: |
+          ls -lah
           apt update
           apt install zstd -y -qq
           npm install
@@ -17,7 +19,7 @@ jobs:
         with:
           path: |
             node_modules
-          key: "tst"
-          storage: /tmp
-      - run: |
-          ls -lah
+          key: npm-feature-${{ hashFiles('package-lock.json') }}
+          storage: ./
+      # - run: |
+      #     ls -lah
