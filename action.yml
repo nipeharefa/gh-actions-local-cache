@@ -2,8 +2,8 @@ name: 'Wait'
 description: 'Wait a designated number of milliseconds'
 runs:
   using: 'node16'
-  main: 'dist/main/index.js'
-  post: 'dist/restore/index.js'
+  main: 'dist/restore/index.js'
+  post: 'dist/save/index.js'
   post-if: success()
 
 inputs:
