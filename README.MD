@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 16
       - name: Cache
-        uses: nipeharefa/gh-actions-local-cache@dev
+        uses: nipeharefa/gh-actions-local-cache@main
         with:
           path: |
             node_modules
