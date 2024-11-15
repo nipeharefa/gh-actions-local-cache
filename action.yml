@@ -1,4 +1,4 @@
-name: 'Wait'
+name: 'Github Action Local Cache'
 description: 'Wait a designated number of milliseconds'
 runs:
   using: 'node16'
